@@ -8,7 +8,7 @@ from app.juegosmundial.forms import EquipoForm
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 
-
+import json
 
 
 def index_juegosmundial(request):
@@ -21,10 +21,10 @@ def triviadescrip(request):
 	return render(request, 'juegos/trivia/DescripTrivia.html')	
 
 def equipoidealdescrip(request):
-	return render(request, 'juegos/DescripEquipoIdeal.html')	
+	return render(request, 'juegos/equipo/DescripEquipoIdeal.html')	
 
 def polladescrip(request):
-	return render(request, 'juegos/DescripPolla.html')
+	return render(request, 'juegos/polla/DescripPolla.html')
 
 
 def triviajuegos(request):
@@ -77,18 +77,7 @@ def equipo_view(request):
 		return redirect('juegosmundial:juegos_listar')
 	else:
 		form = EquipoForm()
-	return render(request,'juegos/EquipoIdealJuego.html',{'form':form})
-
-
-@csrf_exempt
-def validar(self,request,response):
-	print("entro a validar")
-	if request.method == 'POST':
-		xd = response.getvalue()
-		print("holita")
-	else:
-		print("mal")
-	return "true"
+	return render(request,'juegos/equipo/EquipoIdealJuego.html',{'form':form})
 
 
 def equiposguardados(request):

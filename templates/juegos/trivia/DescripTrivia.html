@@ -1,5 +1,5 @@
 {% extends 'base/base.html' %}
- 
+{% load staticfiles %}
 {% block link%} 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
@@ -32,7 +32,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <a href="{% url 'juegosmundial:triviajuego' %}" class="btn btn-primary btn-lg">Comenzar</a>
+          <a href="{% url 'juegosmundial:triviajuego' %}" class="btn btn-primary btn-lg" onclick="eventoingresar('trivia')" >Comenzar</a>
             <!-- <a href="Trivia/quiz.html" class="btn btn-primary btn-lg" href="" target="" data-toggle="">Comenzar</a>  -->
 
         </div>
@@ -40,3 +40,10 @@
     </div>
   </div>
   {% endblock %}
+
+
+  {% block script%}
+
+  <script src="{% static 'js/eventos2.js' %}" ></script>
+
+  {%endblock %}
