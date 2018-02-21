@@ -1,5 +1,5 @@
 
-var BASE_URL = "https://appeventomongo.herokuapp.com/eventos/";
+var BASE_URL = "https://appeventmongo.herokuapp.com/eventos/";
 
 function eventoingresar(tipo){
 
