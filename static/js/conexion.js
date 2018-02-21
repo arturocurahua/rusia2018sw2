@@ -37,11 +37,12 @@ function getTiposList() {
 
     console.log("estamos dentro")
     $.ajax({
-        url: serviceURL + 'listado',
+        type: "GET",
+        url: serviceURL + 'listado/',
         async: false,
         success: function(data) {
-
-    	//console.log(data);
+        console.log("data previa")
+    	console.log(data);
         //console.log(typeof(data));
         //console.log(data[0]);
         //console.log(data[1]);
@@ -76,7 +77,13 @@ function getTiposList() {
         }
         
 
-    }});   
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+                alert(xhr.status);
+                alert(thrownError);
+        }
+
+    });   
 
 
     console.log(docs)

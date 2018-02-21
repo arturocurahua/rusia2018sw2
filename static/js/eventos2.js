@@ -5,7 +5,7 @@ function eventoingresar(tipo){
 
 	var nombreUsuario = localStorage.getItem("nomUsuario");
 	var d = new Date();
-    var diahora = d.getHours()+":"+d.getMinutes()+"//"+d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear();
+    var diahora = d.getHours()+":"+d.getMinutes()+"//"+d.getDate()+"-"+(d.getMonth()+1)+"-"+d.getFullYear()+"//"+d.getDay();;
     
         var evento = {
             usuario: nombreUsuario,
@@ -32,7 +32,7 @@ function eventoingresar(tipo){
             error: function (xhr, ajaxOptions, thrownError) {
         		alert(xhr.status);
         		alert(thrownError);
-      }
+      		}
         });
 
 }
