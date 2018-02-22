@@ -1,0 +1,112 @@
+{% extends 'base/base.html' %}
+{% load staticfiles %}
+{% block link%} 
+<link rel="stylesheet" href="{% static 'css/pintadoBarra.css' %}">
+
+ {%endblock %}
+
+
+{% block content %}
+{% csrf_token %}
+
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm-3">
+  	<label for="sel1">Evento:</label>
+      <select class="form-control" id="sel1">
+        <option>Seleccionar Evento</option>
+        <option value="trivia">trivia</option>
+        <option value="equipo">equipo</option>
+        <option value="polla">polla</option>
+      </select>
+
+  </div>
+  <div class="col-sm-3">
+  	<label for="sel2">Mes:</label>
+      <select class="form-control" id="sel2">
+        <option>Seleccionar Mes</option>
+        <option value="1">Enero</option>
+        <option value="2">Febrero</option>
+        <option value="3">Marzo</option>
+        <option value="4">Abril</option>
+        <option value="5">Mayo</option>
+        <option value="6">Junio</option>
+        <option value="7">Julio</option>
+        <option value="8">Agosto</option>
+        <option value="9">Setiembre</option>
+        <option value="10">Octubre</option>
+        <option value="11">Noviembre</option>
+        <option value="12">Diciembre</option>
+      </select>
+  </div>
+  <div class="col-sm-3">
+  	<label for="sel2">Año:</label>
+      <select class="form-control" id="sel3">
+        <option>Seleccionar Año</option>
+        <option value="2018">2018</option>
+      </select>
+  </div>
+    <div class="col-sm-3">
+  	<button class="btn btn-success" onclick="filtro()">FILTRAR</button>
+  </div>
+</div>
+
+<br>
+  <br>
+  <br>
+
+  	<h1>Total</h1>
+<div class="container">
+    <div class="skills Total" style="width: 0%; background-color: #4CAF50;" id="total">%</div>
+  </div>
+
+
+  <p>Lunes</p>
+  <div class="container">
+    <div class="skills lunes">15%</div>
+  </div>
+
+  <p>Martes</p>
+  <div class="container">
+    <div class="skills martes">80%</div>
+  </div>
+
+  <p>Miércoles</p>
+  <div class="container">
+    <div class="skills miercoles">65%</div>
+  </div>
+
+  <p>Jueves</p>
+  <div class="container">
+    <div class="skills jueves">60%</div>
+  </div>
+
+  <p>Viernes</p>
+  <div class="container">
+    <div class="skills viernes">60%</div>
+  </div>
+
+  <p>Sábado</p>
+  <div class="container">
+    <div class="skills sabado">60%</div>
+  </div>
+
+  <p>Domingo</p>
+  <div class="container">
+    <div class="skills domingo">60%</div>
+  </div>
+
+
+       
+
+  {% endblock %}
+
+
+  {% block script%}
+
+  <script src="{% static 'js/eventos2.js' %}" ></script>
+
+  {%endblock %}

@@ -2,7 +2,7 @@ from django.urls import path
 from django.conf.urls import url
 
 from app.juegosmundial.views import index_juegosmundial,equipoidealjuegos,juegosmundialbien,triviadescrip,\
-                            equipoidealdescrip,polladescrip,triviajuegos,preguntas_list,listado,triviafinal,listadojugadores,equipo_view,equiposguardados,apuesta,grupoB,grupoA,grupoC,grupoD,grupoE,grupoF,grupoG,grupoH,listarpartidos,saveapuesta,finddinero,solvepartido
+                            equipoidealdescrip,polladescrip,triviajuegos,preguntas_list,listado,triviafinal,listadojugadores,equipo_view,equiposguardados,apuesta,grupoB,grupoA,grupoC,grupoD,grupoE,grupoF,grupoG,grupoH,listarpartidos,saveapuesta,finddinero,solvepartido,mostrareventos
 
 app_name = 'juegosmundial'
 
@@ -45,6 +45,8 @@ urlpatterns = [
 
     #Resolver partido
     url(r'^solvepartido/',solvepartido, name='solvepartido'),
+
+    url(r'^listareventos/',mostrareventos, name='mostrareventos'),
 
 
 

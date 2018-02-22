@@ -151,3 +151,6 @@ def solvepartido(request):
 		DatosUsuario.objects.filter(user=u).update(dinero=F('dinero')+apue.importe)
 	apuestas_pasaron = Apuesta.objects.filter(partido=request.POST.get('partido')).update(estado=False)	
 	return JsonResponse(jsonrespuesta)
+
+def mostrareventos(request):
+	return render(request, 'graficoeventos/graficoeventos.html')
