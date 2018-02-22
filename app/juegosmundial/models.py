@@ -36,4 +36,21 @@ class Equipo(models.Model):
 	usuario = models.ForeignKey(User,null=True,blank=True,on_delete=models.CASCADE)
 	
 
+class DatosUsuario(models.Model):
+	user = models.OneToOneField(User, default=1, on_delete=models.CASCADE)
+	dinero =  models.FloatField()
+	def __str__(self):
+		return "%s" % (self.user)
+
+class Apuesta(models.Model):
+	estado = models.BooleanField(default=True)	
+	partido =  models.CharField(max_length=10)	
+	apuesta =  models.FloatField()
+	importe =  models.FloatField()
+	resultado = models.CharField(max_length=1)
+	user = models.ForeignKey(User, default=1, on_delete=models.CASCADE)
+	def __str__(self):
+		return "%s aposto %s al %s en el partido %s" % (self.user, self.apuesta, self.resultado, self.partido)
+
+
 

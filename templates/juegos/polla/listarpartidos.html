@@ -1,0 +1,796 @@
+{% load staticfiles %}
+
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Polla Mundial 2018</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link type="text/css" rel=stylesheet href="{% static 'css/listarpartidos.css' %}">
+    <link type="text/css" rel=stylesheet href="{% static 'css/apuestastyle.css' %}">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body class="container intro-2">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-3">
+            <h1 style="font-family:fantasy;color:#FFFFFF;">APUESTAPE</h1>
+        </div>
+        <div class="col-sm-6">
+            <h3 style="font-family:fantasy;color:#FFFFFF;">Listar de partidos para defini ganadores</h3>
+        </div>
+    </div>
+
+
+
+    <div style="padding:15px;text-align:center;">
+        <h1 style="font-family:fantasy;color:#FFFFFF;">Polla Mundial 2018</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="tarjeta">
+                <h3 style="text-align: center;">Grupo A</h3>
+                <h3 >Primera Jornada</h3>
+                <hr>
+                <h4>Rusia vs. Arabia Saudita</h4>
+                <p>14/06/2018 | 10:00 hrs.</p>
+                <div class="btn-group" id="1" >
+                    <button type="button" class="apuesta btn btn-primary">Rusia
+                        <br>1.36</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>5.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Arabia Saudita
+                        <br>8.75</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Egipto vs. Uruguay</h4>
+                <p>15/06/2018 | 07:00 hrs.</p>
+                <div class="btn-group" id="2">
+                    <button type="button" class="apuesta btn btn-primary">Egipto
+                        <br>5.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.75</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Uruguay
+                        <br>1.72</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Segunda Jornada</h3>
+                <hr>
+                <h4>Rusia vs. Egipto</h4>
+                <p>19/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="3">
+                    <button type="button" class="apuesta btn btn-primary">Rusia
+                        <br>1.80</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.35</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Egipto
+                        <br>5.00</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Uruguay vs. Arabia Saudita</h4>
+                <p>20/06/2018 | 10:00 hrs.</p>
+                <div class="btn-group" id="4">
+                    <button type="button" class="apuesta btn btn-primary">Uruguay
+                        <br>1.30</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>5.50</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Arabia Saudita
+                        <br>10.00</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Tercera Jornada</h3>
+                <hr>
+                <h4> Uruguay vs. Rusia</h4>
+                <p>25/06/2018 | 09:00 hrs.</p>
+                <div class="btn-group" id="5">
+                    <button type="button" class="apuesta btn btn-primary">Uruguay
+                        <br>2.60</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Rusia
+                        <br>2.75</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Arabia Saudita vs. Egipto</h4>
+                <p>25/06/2018 | 09:00 hrs.</p>
+                <div class="btn-group" id="6">
+                    <button type="button" class="apuesta btn btn-primary">Arabia Saudita
+                        <br>4.40</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.40</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Egipto
+                        <br>1.80</br>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="tarjeta">
+                <h3 style="text-align: center;">Grupo B</h3>
+                <h3>Primera Jornada</h3>
+                <hr>
+                <h4>Marruecos vs. Irán</h4>
+                <p>15/06/2018 | 10:00 hrs.</p>
+                <div class="btn-group" id="7">
+                    <button type="button" class="apuesta btn btn-primary">Marruecos
+                        <br>2.35</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.20</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Irán
+                        <br>3.20</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Portugal vs. España</h4>
+                <p>15/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="8">
+                    <button type="button" class="apuesta btn btn-primary">Portugal
+                        <br>4.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3-50</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">España
+                        <br>1.95</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Segunda Jornada</h3>
+                <hr>
+                <h4>Portugal vs. Marruecos</h4>
+                <p>20/06/2018 | 07:00 hrs.</p>
+                <div class="btn-group" id="9">
+                    <button type="button" class="apuesta btn btn-primary">Portugal
+                        <br>1.55</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.75</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Marruecos
+                        <br>7.00</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Irán vs. España</h4>
+                <p>20/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="10">
+                    <button type="button" class="apuesta btn btn-primary">Irán
+                        <br>13.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>5.50</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">España
+                        <br>1.22</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Tercera Jornada</h3>
+                <hr>
+                <h4> España vs. Marruecos</h4>
+                <p>25/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="11">
+                    <button type="button" class="apuesta btn btn-primary">España
+                        <br>1.38</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>4.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Marruecos
+                        <br>9.50</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Irán vs. Portugal</h4>
+                <p>25/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="12">
+                    <button type="button" class="apuesta btn btn-primary">Irán
+                        <br>8.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>4.25</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Portugal
+                        <br>9.50</br>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="tarjeta">
+                <h3 style="text-align: center;">Grupo C</h3>
+                <h3>Primera Jornada</h3>
+                <hr>
+                <h4>Francia vs. Australia</h4>
+                <p>16/06/2018 | 05:00 hrs.</p>
+                <div class="btn-group" id="13">
+                    <button type="button" class="apuesta btn btn-primary">Francia
+                        <br>1.20</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>6.25</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Australia
+                        <br>17.00</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Perú vs. Dinamarca</h4>
+                <p>16/06/2018 | 11:00 hrs.</p>
+                <div class="btn-group" id="14">
+                    <button type="button" class="apuesta btn btn-primary">Perú
+                        <br>3.80</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.30</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Dinamarca
+                        <br>2.05</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Segunda Jornada</h3>
+                <hr>
+                <h4>Dinamarca vs. Australia</h4>
+                <p>21/06/2018 | 07:00 hrs.</p>
+                <div class="btn-group" id="15">
+                    <button type="button" class="apuesta btn btn-primary">Dinamarca
+                        <br>1.75</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.55</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Australia
+                        <br>5.00</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Francia vs. Perú</h4>
+                <p>21/06/2018 | 10:00 hrs.</p>
+                <div class="btn-group" id="16">
+                    <button type="button" class="apuesta btn btn-primary">Francia
+                        <br>1.28</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>5.15</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Perú
+                        <br>13.00</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Tercera Jornada</h3>
+                <hr>
+                <h4> Dinamarca vs. Francia</h4>
+                <p>26/06/2018 | 09:00 hrs.</p>
+                <div class="btn-group" id="17">
+                    <button type="button" class="apuesta btn btn-primary">Dinamarca
+                        <br>5.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.80</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Francia
+                        <br>1.62</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Australia vs. Perú</h4>
+                <p>26/06/2018 | 09:00 hrs.</p>
+                <div class="btn-group" id="18">
+                    <button type="button" class="apuesta btn btn-primary">Australia
+                        <br>3.25</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.15</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Perú
+                        <br>2.20</br>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="tarjeta">
+                <h3 style="text-align: center;">Grupo D</h3>
+                <h3>Primera Jornada</h3>
+                <hr>
+                <h4>Argentina vs. Islandia</h4>
+                <p>16/06/2018 | 08:00 hrs.</p>
+                <div class="btn-group" id="19">
+                    <button type="button" class="apuesta btn btn-primary">Argentina
+                        <br>1.36</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>4.75</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Islandia
+                        <br>9.25</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Croacia vs. Nigeria</h4>
+                <p>16/06/2018 | 14:00 hrs.</p>
+                <div class="btn-group" id="20">
+                    <button type="button" class="apuesta btn btn-primary">Croacia
+                        <br>1.90</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.50</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Nigeria
+                        <br>4.20</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Segunda Jornada</h3>
+                <hr>
+                <h4>Argentina vs. Croacia</h4>
+                <p>21/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="21">
+                    <button type="button" class="apuesta btn btn-primary">Argentina
+                        <br>1.83</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.40</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Croacia
+                        <br>4.75</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Nigeria vs. Islandia</h4>
+                <p>22/06/2018 | 10:00 hrs.</p>
+                <div class="btn-group" id="22">
+                    <button type="button" class="apuesta btn btn-primary">Nigeria
+                        <br>2.70</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.20</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Islandia
+                        <br>2.79</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Tercera Jornada</h3>
+                <hr>
+                <h4>Islandia vs. Croacia</h4>
+                <p>26/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="23">
+                    <button type="button" class="apuesta btn btn-primary">Islandia
+                        <br>4.15</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.50</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Croacia
+                        <br>1.80</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Nigeria vs. Argentina</h4>
+                <p>26/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="24">
+                    <button type="button" class="apuesta btn btn-primary">Nigeria
+                        <br>6.75</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>4.10</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Argentina
+                        <br>1.45</br>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="tarjeta">
+                <h3 style="text-align: center;">Grupo E</h3>
+                <h3>Primera Jornada</h3>
+                <hr>
+                <h4>Costa Rica vs. Serbia</h4>
+                <p>17/06/2018 | 07:00 hrs.</p>
+                <div class="btn-group" id="25">
+                    <button type="button" class="apuesta btn btn-primary">Costa Rica
+                        <br>4.25</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.40</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Serbia
+                        <br>1.91</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Brasil vs. Suiza</h4>
+                <p>17/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="26">
+                    <button type="button" class="apuesta btn btn-primary">Brasil
+                        <br>1.36</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>4.75</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Suiza
+                        <br>9.75</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Segunda Jornada</h3>
+                <hr>
+                <h4>Brasil vs. Costa Rica</h4>
+                <p>22/06/2018 | 07:00 hrs.</p>
+                <div class="btn-group" id="27">
+                    <button type="button" class="apuesta btn btn-primary">Brasil
+                        <br>1.22</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>6.50</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Costa Rica
+                        <br>13.00</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Serbia vs. Suiza</h4>
+                <p>22/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="28">
+                    <button type="button" class="apuesta btn btn-primary">Serbia
+                        <br>2.75</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.20</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Suiza
+                        <br>2.65</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Tercera Jornada</h3>
+                <hr>
+                <h4>Serbia vs. Brasil</h4>
+                <p>27/06/2018 | 00:00 hrs.</p>
+                <div class="btn-group" id="29">
+                    <button type="button" class="apuesta btn btn-primary">Serbia
+                        <br>8.25</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>4.45</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Brasil
+                        <br>1.37</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Suiza vs. Costa Rica</h4>
+                <p>22/06/2018 | 00:00 hrs.</p>
+                <div class="btn-group" id="30">
+                    <button type="button" class="apuesta btn btn-primary">Suiza
+                        <br>1.80</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.30</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Costa Rica
+                        <br>4.60</br>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="tarjeta">
+                <h3 style="text-align: center;">Grupo F</h3>
+                <h3>Primera Jornada</h3>
+                <hr>
+                <h4>Alemania vs. México</h4>
+                <p>17/06/2018 | 10:00 hrs.</p>
+                <div class="btn-group" id="31">
+                    <button type="button" class="apuesta btn btn-primary">Alemania
+                        <br>1.53</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>4.10</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">México
+                        <br>6.75</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Suecia vs. Corea del Sur</h4>
+                <p>18/06/2018 | 07:00 hrs.</p>
+                <div class="btn-group" id="32">
+                    <button type="button" class="apuesta btn btn-primary">Suecia
+                        <br>2.10</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.20</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Corea del Sur
+                        <br>3.80</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Segunda Jornada</h3>
+                <hr>
+                <h4>Corea del Sur vs. México</h4>
+                <p>23/06/2018 | 10:00 hrs.</p>
+                <div class="btn-group" id="33">
+                    <button type="button" class="apuesta btn btn-primary">Corea del Sur
+                        <br>4.45</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.40</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">México
+                        <br>1.91</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Alemania vs. Suecia</h4>
+                <p>23/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="34">
+                    <button type="button" class="apuesta btn btn-primary">Alemania
+                        <br>1.53</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>4.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Suecia
+                        <br>6.75</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Tercera Jornada</h3>
+                <hr>
+                <h4>Corea del Sur vs. Alemania</h4>
+                <p>27/06/2018 | 00:00 hrs.</p>
+                <div class="btn-group" id="35">
+                    <button type="button" class="apuesta btn btn-primary">Corea del Sur
+                        <br>13.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>6.50</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Alemania
+                        <br>1.18</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>México vs. Suecia</h4>
+                <p>27/06/2018 | 00:00 hrs.</p>
+                <div class="btn-group" id="36">
+                    <button type="button" class="apuesta btn btn-primary">México
+                        <br>2.45</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.20</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Suecia
+                        <br>2.80</br>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="tarjeta">
+                <h3 style="text-align: center;">Grupo G</h3>
+                <h3>Primera Jornada</h3>
+                <hr>
+                <h4>Bélgica vs. Panamá</h4>
+                <p>18/06/2018 | 10:00 hrs.</p>
+                <div class="btn-group" id="37">
+                    <button type="button" class="apuesta btn btn-primary">Bélgica
+                        <br>1.20</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>7.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Panamá
+                        <br>13.50</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Túnez vs. Inglaterra</h4>
+                <p>18/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="38">
+                    <button type="button" class="apuesta btn btn-primary">Túnez
+                        <br>9.50</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>5.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Inglaterra
+                        <br>1.34</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Segunda Jornada</h3>
+                <hr>
+                <h4>Bélgica vs. Túnez</h4>
+                <p>23/06/2018 | 07:00 hrs.</p>
+                <div class="btn-group" id="39">
+                    <button type="button" class="apuesta btn btn-primary">Bélgica
+                        <br>1.25</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>6.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Túnez
+                        <br>12.00</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Inglaterra vs. Panamá</h4>
+                <p>24/06/2018 | 07:00 hrs.</p>
+                <div class="btn-group" id="40">
+                    <button type="button" class="apuesta btn btn-primary">Inglaterra
+                        <br>1.22</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>6.25</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Panamá
+                        <br>14.00</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Tercera Jornada</h3>
+                <hr>
+                <h4>Inglaterra vs. Bélgica</h4>
+                <p>28/06/2018 | 07:00 hrs.</p>
+                <div class="btn-group" id="41">
+                    <button type="button" class="apuesta btn btn-primary">Inglaterra
+                        <br>3.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.20</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Bélgica
+                        <br>2.30</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Panamá vs. Túnez</h4>
+                <p>28/06/2018 | 00:00 hrs.</p>
+                <div class="btn-group" id="42">
+                    <button type="button" class="apuesta btn btn-primary">Panamá
+                        <br>3.20</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.10</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Túnez
+                        <br>2.25</br>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="tarjeta">
+                <h3 style="text-align: center;">Grupo H</h3>
+                <h3>Primera Jornada</h3>
+                <hr>
+                <h4>Colombia vs. Japón</h4>
+                <p>19/06/2018 | 07:00 hrs.</p>
+                <div class="btn-group" id="43">
+                    <button type="button" class="apuesta btn btn-primary">Colombia
+                        <br>1.72</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.60</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Japón
+                        <br>5.25</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Polonia vs. Senegal</h4>
+                <p>19/06/2018 | 10:00 hrs.</p>
+                <div class="btn-group" id="44">
+                    <button type="button" class="apuesta btn btn-primary">Polonia
+                        <br>2.20</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.30</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Senegal
+                        <br>3.40</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Segunda Jornada</h3>
+                <hr>
+                <h4>Japón vs. Senegal</h4>
+                <p>24/06/2018 | 10:00 hrs.</p>
+                <div class="btn-group" id="45">
+                    <button type="button" class="apuesta btn btn-primary">Japón
+                        <br>3.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.30</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Senegal
+                        <br>2.40</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Polonia vs. Colombia</h4>
+                <p>24/06/2018 | 13:00 hrs.</p>
+                <div class="btn-group" id="46">
+                    <button type="button" class="apuesta btn btn-primary">Polonia
+                        <br>2.80</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.40</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Colombia
+                        <br>2.50</br>
+                    </button>
+                </div>
+                <hr>
+                <h3>Tercera Jornada</h3>
+                <hr>
+                <h4>Japón vs. Polonia</h4>
+                <p>28/06/2018 | 00:00 hrs.</p>
+                <div class="btn-group" id="47">
+                    <button type="button" class="apuesta btn btn-primary">Japón
+                        <br>4.25</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.40</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Polonia
+                        <br>1.80</br>
+                    </button>
+                </div>
+                <hr>
+                <h4>Senegal vs. Colombia</h4>
+                <p>28/06/2018 | 00:00 hrs.</p>
+                <div class="btn-group" id="48">
+                    <button type="button" class="apuesta btn btn-primary">Senegal
+                        <br>4.00</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Empate
+                        <br>3.40</br>
+                    </button>
+                    <button type="button" class="apuesta btn btn-primary">Colombia
+                        <br>1.85</br>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'js/polla/listarpartidos.js' %}"></script>
+</body>
+
+</html>

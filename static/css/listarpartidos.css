@@ -1,0 +1,11 @@
+.tarjeta{
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.t_center{
+    text-align: center;
+}

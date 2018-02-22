@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core import serializers
-
-from app.juegosmundial.models import Pregunta,Respuesta,Jugadores,Equipo
+from django.http import JsonResponse
+from django.contrib.auth.models import User
+from app.juegosmundial.models import Pregunta,Respuesta,Jugadores,Equipo,Apuesta,DatosUsuario
+from django.db.models import F
 
 from app.juegosmundial.forms import EquipoForm
 # Create your views here.
@@ -106,3 +108,46 @@ def grupoG(request):
 	return render(request, 'juegos/polla/grupog.html')
 def grupoH(request):
 	return render(request, 'juegos/polla/grupoh.html')
+
+
+#Listar partidos para definir ganadores
+def listarpartidos(request):
+	return render(request, 'juegos/polla/listarpartidos.html')
+
+@csrf_exempt
+def saveapuesta(request):
+	jsonrespuesta={}
+	partido = request.POST.get('partido')
+	apuesta = request.POST.get('apuesta')
+	importe = request.POST.get('importe')
+	resultado = request.POST.get('resultado')
+	user = User.objects.get(username=request.POST.get('usuario'))
+	ap = Apuesta(partido=partido, apuesta=apuesta, importe=importe, resultado=resultado,user=user)
+	ap.save()
+	DatosUsuario.objects.filter(user=user).update(dinero=F('dinero')-apuesta)
+	return JsonResponse(jsonrespuesta)
+
+@csrf_exempt
+def finddinero(request):
+	user = User.objects.get(username=request.POST.get('usuario'))
+	datos_usuario = DatosUsuario.objects.filter(user=user)
+	if(datos_usuario):
+		jsonrespuesta={"msg" : "ya registrado" , "dinero":datos_usuario[0].dinero}
+		pass
+	else:
+		print("Usuario no registrado")
+		d = DatosUsuario(user=user, dinero=100)
+		d.save()
+		jsonrespuesta={"msg" : "nuevo" , "dinero":100}
+	return JsonResponse(jsonrespuesta)
+
+@csrf_exempt
+def solvepartido(request):
+	jsonrespuesta={}
+	user = User.objects.get(username=request.POST.get('usuario'))
+	apuestas = Apuesta.objects.filter(partido=request.POST.get('partido'), resultado=request.POST.get('ganador'), estado=True)
+	for apue in apuestas:
+		u = User.objects.get(username=apue.user.username)
+		DatosUsuario.objects.filter(user=u).update(dinero=F('dinero')+apue.importe)
+	apuestas_pasaron = Apuesta.objects.filter(partido=request.POST.get('partido')).update(estado=False)	
+	return JsonResponse(jsonrespuesta)

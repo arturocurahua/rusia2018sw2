@@ -12,13 +12,38 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link type ="text/css" rel=stylesheet href="{% static 'css/apuestastyle.css' %}">
+  <link type="text/css" rel=stylesheet href="{% static 'css/apuestastyle.css' %}">
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body class="container intro-2">
   {% csrf_token %}
-  <h1 style="font-family:fantasy;color:#FFFFFF;">APUESTAPE</h1>
+  <div class="row">
+    <div class="col-sm-3">
+      <h1 style="font-family:fantasy;color:#FFFFFF;">APUESTAPE</h1>
+    </div>
+    <div class="col-sm-6">
+      <h3 style="font-family:fantasy;color:#FFFFFF;">Recuerda que solo se puede apostar a un partido</h3>
+    </div>
+    <div class="col-sm-3">
+      <h1 class="saldo">Saldo disponible:</h1>
+      <table>
+        <thead>
+          <th>
+            <form action="" class="saldoform">
+              <input id="dinero" type="text" disabled value="...">
+            </form>
+          </th>
+          <th>
+          </th>
+        </thead>
+      </table>
+
+      <br>
+    </div>
+  </div>
+
+
 
   <div style="padding:15px;text-align:center;">
     <h1 style="font-family:fantasy;color:#FFFFFF;">Polla Mundial 2018</h1>
@@ -37,29 +62,39 @@
             <tr>
               <div id=links class="sidenav">
                 <p>
-                  <a style="cursor:pointer;" class="grupo" grupo="a" >Grupo A</a>
+                  <a style="cursor:pointer;" class="grupo" grupo="a">Grupo A</a>
                 </p>
                 <p>
-                  <a style="cursor:pointer;" class="grupo" grupo="b" >Grupo B</a>
+                  <a style="cursor:pointer;" class="grupo" grupo="b">Grupo B</a>
                 </p>
                 <p>
-                  <a style="cursor:pointer;"  class="grupo" grupo="c" >Grupo C</a>
+                  <a style="cursor:pointer;" class="grupo" grupo="c">Grupo C</a>
                 </p>
                 <p>
-                  <a style="cursor:pointer;"  class="grupo" grupo="d" >Grupo D</a>
+                  <a style="cursor:pointer;" class="grupo" grupo="d">Grupo D</a>
                 </p>
                 <p>
-                  <a style="cursor:pointer;"  class="grupo" grupo="e" >Grupo E</a>
+                  <a style="cursor:pointer;" class="grupo" grupo="e">Grupo E</a>
                 </p>
                 <p>
-                  <a style="cursor:pointer;"  class="grupo" grupo="f" >Grupo F</a>
+                  <a style="cursor:pointer;" class="grupo" grupo="f">Grupo F</a>
                 </p>
                 <p>
-                  <a style="cursor:pointer;"  class="grupo" grupo="g" >Grupo G</a>
+                  <a style="cursor:pointer;" class="grupo" grupo="g">Grupo G</a>
                 </p>
                 <p>
-                  <a style="cursor:pointer;"  class="grupo" grupo="h" >Grupo H</a>
+                  <a style="cursor:pointer;" class="grupo" grupo="h">Grupo H</a>
                 </p>
+              </div>
+            </tr>
+            <tr>
+              <td>
+                <br></br>
+              </td>
+            </tr>
+            <tr>
+              <div>
+                <a href="#" class="btn btn-primary btn-lg">Regresar al Menú Principal</a>
               </div>
             </tr>
           </tbody>
@@ -107,31 +142,31 @@
                           </button>
                           <ul class="dropdown-menu">
                             <li>
-                              <a class="importe" >2</a>
+                              <a class="importe">2</a>
                             </li>
                             <li>
-                              <a class="importe" >3</a>
+                              <a class="importe">3</a>
                             </li>
                             <li>
-                              <a class="importe" >5</a>
+                              <a class="importe">5</a>
                             </li>
                             <li>
-                              <a class="importe" >10</a>
+                              <a class="importe">10</a>
                             </li>
                             <li>
-                              <a class="importe" >20</a>
+                              <a class="importe">20</a>
                             </li>
                             <li>
-                              <a class="importe" >50</a>
+                              <a class="importe">50</a>
                             </li>
                             <li>
-                              <a class="importe" >100</a>
+                              <a class="importe">100</a>
                             </li>
                             <li>
-                              <a class="importe" >200</a>
+                              <a class="importe">200</a>
                             </li>
                             <li>
-                              <a class="importe" >500</a>
+                              <a class="importe">500</a>
                             </li>
                           </ul>
                         </div>

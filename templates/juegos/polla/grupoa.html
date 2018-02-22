@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,59 +38,59 @@
       <hr>
       <h4>Rusia vs. Arabia Saudita</h4>
       <p>14/06/2018 | 10:00 hrs.</p>
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary">Rusia<br>1.36</br></button>
-        <button type="button" class="btn btn-primary">Empate<br>5.00</br></button>
-        <button type="button" class="btn btn-primary">Arabia Saudita<br>8.75</br></button>
+      <div id="1" class="btn-group">
+        <button type="button" class="apuesta btn btn-primary">Rusia<br>1.36</br></button>
+        <button type="button" class="apuesta btn btn-primary">Empate<br>5.00</br></button>
+        <button type="button" class="apuesta btn btn-primary">Arabia Saudita<br>8.75</br></button>
       </div>
       <hr>
       <h4>Egipto vs. Uruguay</h4>
       <p>15/06/2018 | 07:00 hrs.</p>
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary">Egipto<br>5.00</br></button>
-        <button type="button" class="btn btn-primary">Empate<br>3.75</br></button>
-        <button type="button" class="btn btn-primary">Uruguay<br>1.72</br></button>
+      <div id="2" class="btn-group">
+        <button type="button" class="apuesta btn btn-primary">Egipto<br>5.00</br></button>
+        <button type="button" class="apuesta btn btn-primary">Empate<br>3.75</br></button>
+        <button type="button" class="apuesta btn btn-primary">Uruguay<br>1.72</br></button>
       </div>
       <hr>
       <h3>Segunda Jornada</h3>
       <hr>
       <h4>Rusia vs. Egipto</h4>
       <p>19/06/2018 | 13:00 hrs.</p>
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary">Rusia<br>1.80</br></button>
-        <button type="button" class="btn btn-primary">Empate<br>3.35</br></button>
-        <button type="button" class="btn btn-primary">Egipto<br>5.00</br></button>
+      <div id="3" class="btn-group">
+        <button type="button" class="apuesta btn btn-primary">Rusia<br>1.80</br></button>
+        <button type="button" class="apuesta btn btn-primary">Empate<br>3.35</br></button>
+        <button type="button" class="apuesta btn btn-primary">Egipto<br>5.00</br></button>
       </div>
       <hr>
       <h4>Uruguay vs. Arabia Saudita</h4>
       <p>20/06/2018 | 10:00 hrs.</p>
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary">Uruguay<br>1.30</br></button>
-        <button type="button" class="btn btn-primary">Empate<br>5.50</br></button>
-        <button type="button" class="btn btn-primary">Arabia Saudita<br>10.00</br></button>
+      <div id="4" class="btn-group">
+        <button type="button" class="apuesta btn btn-primary">Uruguay<br>1.30</br></button>
+        <button type="button" class="apuesta btn btn-primary">Empate<br>5.50</br></button>
+        <button type="button" class="apuesta btn btn-primary">Arabia Saudita<br>10.00</br></button>
       </div>
       <hr>
       <h3>Tercera Jornada</h3>
       <hr>
       <h4> Uruguay vs. Rusia</h4>
       <p>25/06/2018 | 09:00 hrs.</p>
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary">Uruguay<br>2.60</br></button>
-        <button type="button" class="btn btn-primary">Empate<br>3.00</br></button>
-        <button type="button" class="btn btn-primary">Rusia<br>2.75</br></button>
+      <div id="5" class="btn-group">
+        <button type="button" class="apuesta btn btn-primary">Uruguay<br>2.60</br></button>
+        <button type="button" class="apuesta btn btn-primary">Empate<br>3.00</br></button>
+        <button type="button" class="apuesta btn btn-primary">Rusia<br>2.75</br></button>
       </div>
       <hr>
       <h4>Arabia Saudita vs. Egipto</h4>
       <p>25/06/2018 | 09:00 hrs.</p>
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary">Arabia Saudita<br>4.40</br></button>
-        <button type="button" class="btn btn-primary">Empate<br>3.40</br></button>
-        <button type="button" class="btn btn-primary">Egipto<br>1.80</br></button>
+      <div id="6" class="btn-group">
+        <button type="button" class="apuesta btn btn-primary">Arabia Saudita<br>4.40</br></button>
+        <button type="button" class="apuesta btn btn-primary">Empate<br>3.40</br></button>
+        <button type="button" class="apuesta btn btn-primary">Egipto<br>1.80</br></button>
       </div>
     </div>
   </div>
 </div>
 
-
+<script src="{% static 'js/polla/apuesta.js' %}"></script>
 </body>
 </html>

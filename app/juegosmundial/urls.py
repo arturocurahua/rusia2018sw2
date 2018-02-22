@@ -2,7 +2,7 @@ from django.urls import path
 from django.conf.urls import url
 
 from app.juegosmundial.views import index_juegosmundial,equipoidealjuegos,juegosmundialbien,triviadescrip,\
-                            equipoidealdescrip,polladescrip,triviajuegos,preguntas_list,listado,triviafinal,listadojugadores,equipo_view,equiposguardados,apuesta,grupoB,grupoA,grupoC,grupoD,grupoE,grupoF,grupoG,grupoH
+                            equipoidealdescrip,polladescrip,triviajuegos,preguntas_list,listado,triviafinal,listadojugadores,equipo_view,equiposguardados,apuesta,grupoB,grupoA,grupoC,grupoD,grupoE,grupoF,grupoG,grupoH,listarpartidos,saveapuesta,finddinero,solvepartido
 
 app_name = 'juegosmundial'
 
@@ -33,6 +33,19 @@ urlpatterns = [
     url(r'^grupof/',grupoF, name='grupoF'),
     url(r'^grupog/',grupoG, name='grupoG'),
     url(r'^grupoh/',grupoH, name='grupoH'),
+
+    #definir los partidos
+    url(r'^listarpartidos/',listarpartidos, name='listarpartidos'),
+
+    #guardar apuesta
+    url(r'^saveapuesta/',saveapuesta, name='saveapuesta'),
+
+    #Calcular dinero
+    url(r'^finddinero/',finddinero, name='finddinero'),
+
+    #Resolver partido
+    url(r'^solvepartido/',solvepartido, name='solvepartido'),
+
 
 
     
