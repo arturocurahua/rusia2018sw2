@@ -10,7 +10,12 @@ function eventoingresar(tipo){
         var evento = {
             usuario: nombreUsuario,
             tipoevento: tipo,
-            fecha: diahora
+            hora: d.getHours(),
+            minuto: d.getMinutes(),
+            dia: d.getDate(),
+            mes: (d.getMonth()+1),
+            año: d.getFullYear(),
+            diasemana: d.getDay()
         };
         console.log(evento)
         $.ajax({
