@@ -1,4 +1,14 @@
 {% extends 'base/base.html' %}
+{% load staticfiles %}}
+
+{% block style%}  
+
+
+span{display:block;font-size:.8em;margin:0px 0 10px;padding:5px 0 5px 11px;width:200px;color:black}
+.confirmacion{background:#C6FFD5;border:1px solid green;}
+.negacion{background:#ffcccc;border:1px solid red}
+
+{%endblock %}
 
 {% block content %}
 
@@ -31,11 +41,11 @@
   </div>
   <div class="form-group">
     <label for="pwd">Password:</label>
-    <input type="password" style="width: 30%" class="form-control" name="password1" placeholder="Password">
+    <input type="password" style="width: 30%" class="form-control" name="password1" placeholder="Password" id="pass1">
   </div>
   <div class="form-group">
     <label for="pwd">Repetir Password:</label>
-    <input type="password" style="width: 30%" class="form-control" name="password2" placeholder="PasswordS">
+    <input type="password" style="width: 30%" class="form-control" name="password2" placeholder="PasswordS" id="pass2">
   </div>
   <div class="form-group">
      <button type="submit" style="width: 30%" class="btn btn-primary">Guardar</button>
@@ -45,3 +55,9 @@
 
 </div>
   {% endblock %}
+
+  {% block script%}
+  
+  <script src="{% static 'js/validarregistro.js' %}" ></script>
+  
+  {%endblock %}
